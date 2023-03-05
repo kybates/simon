@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
-        <title>About</title>
+        <title>Simon</title>
         <link rel="icon" href="favicon.ico" />
 
         <link rel="stylesheet" href="main.css" />
@@ -41,17 +41,17 @@
         <main class="bg-secondary">
             <div class="players">
                 Player:
-                <span class="player-name">Unknown player</span>
+                <span class="player-name"></span>
             </div>
             <div class="game">
                 <div class="button-container">
-                    <button id="green" class="button-top-left" onclick="game.pressButton(this)"></button>
-                    <button id="red" class="button-top-right" onclick="game.pressButton(this)"></button>
-                    <button id="yellow" class="button-bottom-left" onclick="game.pressButton(this)"></button>
-                    <button id="blue" class="button-bottom-right" onclick="game.pressButton(this)"></button>
+                    <button id="green" class="game-button button-top-left" onclick="game.pressButton(this)"></button>
+                    <button id="red" class="game-button button-top-right" onclick="game.pressButton(this)"></button>
+                    <button id="yellow" class="game-button button-bottom-left" onclick="game.pressButton(this)"></button>
+                    <button id="blue" class="game-button button-bottom-right" onclick="game.pressButton(this)"></button>
                     <div class="controls center">
                         <div class="game-name">Simon<sup>&reg;</sup></div>
-                        <div class="score center">--</div>
+                        <div id="score" class="score center">--</div>
                         <button class="btn btn-primary" onclick="game.reset()">Reset</button>
                     </div>
                 </div>

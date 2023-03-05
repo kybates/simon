@@ -1,8 +1,8 @@
 const btnDescriptions = [
-    {file: 'sound1.mp3', hue: 120},
-    {file: 'sound2.mp3', hue: 0},
-    {file: 'sound3.mp3', hue: 60},
-    {file: 'sound4.mp3', hue: 240},
+    { file: 'sound1.mp3', hue: 120 },
+    { file: 'sound2.mp3', hue: 0 },
+    { file: 'sound3.mp3', hue: 60 },
+    { file: 'sound4.mp3', hue: 240 },
 ];
 
 class Button {
@@ -91,7 +91,7 @@ class Game {
     }
 
     getPlayerName() {
-        return localStorage.getItem('userName') ?? 'Unknown player';
+        return localStorage.getItem('userName') ?? 'Mystery player';
     }
 
     async playSequence() {
@@ -121,7 +121,7 @@ class Game {
     }
 
     getRandomButton() {
-        let buttons = Array.from(this.Buttons.values());
+        let buttons = Array.from(this.buttons.values());
         return buttons[Math.floor(Math.random() * this.buttons.size)];
     }
 
@@ -139,13 +139,14 @@ class Game {
 
     updateScores(userName, score, scores) {
         const date = new Date().toLocaleDateString();
-        const newScore = { name: userName, score: score, date: date }
+        const newScore = { name: userName, score: score, date: date };
 
         let found = false;
         for (const [i, prevScore] of score.entries()) {
             if (score > prevScore.score) {
                 scores.splice(i, 0, newScore);
                 found = true;
+                break;
             }
         }
 
@@ -166,7 +167,7 @@ const game = new Game();
 function delay(milliseconds) {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(True);
+            resolve(true);
         }, milliseconds);
     }); 
 }
