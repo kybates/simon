@@ -161,3 +161,16 @@ class Game {
     }
 }
 
+const game = new Game();
+
+function delay(milliseconds) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(True);
+        }, milliseconds);
+    }); 
+}
+
+function loadSound(filename) {
+    return new Audio('assets/' + filename);
+}
