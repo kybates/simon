@@ -42,7 +42,7 @@ class Game {
 
     constructor() {
         this.buttons = new Map();
-        this.allowPlayer = False;
+        this.allowPlayer = false;
         this.sequence = [];
         this.playerPLaybackPos = 0;
         this.mistakeSound = loadSound('error.mp3');
@@ -59,7 +59,7 @@ class Game {
 
     async pressButton(button) {
         if (this.allowPlayer) {
-            this.allowPlayer = False;
+            this.allowPlayer = false;
             await this.buttons.get(button.id).press(1.0);
 
             if (this.sequence[this.playerPLaybackPos].el.id === button.id) {
@@ -80,7 +80,7 @@ class Game {
     }
 
     async reset() {
-        this.allowPlayer = False;
+        this.allowPlayer = false;
         this.playerPLaybackPos = 0;
         this.sequence = [];
         this.updateScore('--');
